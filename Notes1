@@ -1,41 +1,37 @@
-Day-21
---------
-Selenium WebDriver
------------------
+----------------------
+  Selenium WebDriver    
+----------------------
 
 What is selenium webdriver?
-------
+Selenium WebDriver is an open-source framework and API that allows developers to write code which can launch browsers, navigate pages, interact with web elements, and verify outcomes—mimicking the actions of a real user
+---------------------------------------------------------------------------------------------
 1) WebDriver is one of the component in selenium.
 2) WebDriver is a java interface.
 3) WebDriver is an API( Application Programming interface)
+(API that interacts directly with browsers using dedicated browser drivers like ChromeDriver, FirefoxDriver, etc)
 webdriver api java script--> api-->web browser
 
-WebDriver(I) -- RemoteWebDriver(C)---->ChromeDriver , FirefoxDriver, EdgeDriver etc..
+WebDriver API: A set of programming interfaces for controlling browsers in automation scripts.
+This API provides the essential functions for browser control, including launching URLs, retrieving titles, finding elements, and closing sessions. 
+Maven: A build automation tool that manages project dependencies through pom.xml.
+ChromeDriver/FirefoxDriver: Browser-specific drivers that implement the WebDriver interface for automation
 
+Search context  --> webDriver(I) -- RemoteWebDriver(C)---->ChromeDriver , FirefoxDriver, EdgeDriver etc..
+ (interface)        (interface)     (implements)                      (inherited)
+          (abstract class)
 Environment setup
---------------------
+----------------------------------------------------------------------------------------
 1) Downloading jars files and attaching them to Java project.(Manually) - Not recomended
-------------
--> created new java project
--> downloaded webdriver jars(.zip) and extracted.
--> attach jars to java project.
+- Download Selenium WebDriver JAR files.
+- Create a new Java project in an IDE (like Eclipse).
+- Attach these JARs to the project’s build path
 
 
 2) Creating Maven project   ( Recomended )
-
--->Created a new Maven project in eclipse
---> addedd webdriver dependecy in pom.xml--> updated
-
-
-
-Stable: 4.18.1 (February 19, 2024)
-
-
-pom.xml ---> dependencies
-
-https://mvnrepository.com/
-web driver dependecy link: https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
-
+(mvn repository for dependencies) https://mvnrepository.com/ ---> selenium java
+- Created a new Maven project in eclipse
+- addedd webdriver dependecy in pom.xml--> updated
+- pom.xml ---> dependencies
 
 Assignment
 --------------
@@ -43,4 +39,35 @@ Assignment
 2) Open URL  https://demo.nopcommerce.com/
 3) Validate title should be   "nopCommerce demo store"
 4) close page
+
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class SeleniumDemo {
+    public static void main(String[] args) {
+        // Set system property for ChromeDriver
+        System.setProperty("webdriver.chrome.driver", "path/to/chromedriver.exe");
+
+        // Initialize WebDriver
+        WebDriver driver = new ChromeDriver();
+
+        // 1. Launch browser and 2. Open URL
+        driver.get("https://demo.nopcommerce.com/");
+
+        // 3. Validate title
+        String expectedTitle = "nopCommerce demo store";
+        String actualTitle = driver.getTitle();
+
+        if(actualTitle.equals(expectedTitle)){
+            System.out.println("Title validation successful!");
+        } else {
+            System.out.println("Title validation failed. Actual Title: " + actualTitle);
+        }
+
+        // 4. Close browser
+        driver.quit();
+    }
+}
+
 
