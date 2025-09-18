@@ -1,0 +1,28 @@
+Day-23
+----------
+
+CSS Selector
+--
+
+CSS - Cascading Style Sheets
+
+why css selector ?? sometimes working with complex webpages single attribute may not be able to locate the element
+even if we give right id or attribute it may not be able to locate the element.
+
+different ways to locate
+
+tag is optional
+
+tag id			tag#id
+tag class		tag.classname
+tag attribute   	tag[attribute="value"]
+tag class attribute 	tag.classname[attribute="value"]
+
+
+ctrl-f to search element in inspect
+Assingment
+----
+https://demo.opencart.com/
+
+try to write css locators to identify elements.
+
