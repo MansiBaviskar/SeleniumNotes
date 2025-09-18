@@ -1,4 +1,4 @@
-Day-22
+  Day-22
 ---------
 Direct locaters
 id
@@ -6,6 +6,7 @@ name
 linkText
 partialLinkText
 
+access group of web elements/ multilple elements
 TagName
 classname
 
