@@ -18,6 +18,7 @@ ChromeDriver/FirefoxDriver: Browser-specific drivers that implement the WebDrive
 
 Search context  --> webDriver(I) -- RemoteWebDriver(C)---->ChromeDriver , FirefoxDriver, EdgeDriver etc..
  (interface)        (interface)     (implements)                      (inherited)
+--------------------------------
           (abstract class)
 Environment setup
 ----------------------------------------------------------------------------------------
